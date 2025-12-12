@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .upload-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        video {
+            width: 100%;
+            margin-top: 20px;
+            display: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar"><h2 text-align= "center">Malika Rauthan</h2>
+<h2 text-align= "center">Roll N0.:23134112016</h2>
+ <div class="nav-links">
+<h1>   Subject:</h1>
+<h1>Content Cum Pedalogy of Physics at Secondry Stage</h1>
+
+</div>
+</div>
+
+
+    <div class="content">
+        <div class="upload-box">
+            <h2>Malika's Video is here</h2>
+
+            <input type="file" id="videoInput" accept="video/*">
+
+            <video id="videoPlayer" controls></video>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('videoInput');
+        const video = document.getElementById('videoPlayer');
+
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+
+            if (file) {
+                const url = URL.createObjectURL(file);
+                video.src = url;
+                video.style.display = "block";  // make video visible
+            }
+        });
+    </script>
+
+</body>
+</html>
